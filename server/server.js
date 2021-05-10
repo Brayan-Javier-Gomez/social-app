@@ -6,6 +6,8 @@ const cors = require('cors');
 
 require('./config.js')
 
+// require('../assets/img/no-image.jpg')
+
 app.use(cors());
 
 app.use(body_parser.urlencoded({ extended: false }));
@@ -13,8 +15,11 @@ app.use(body_parser.urlencoded({ extended: false }));
 app.use(body_parser.json())
 
 
+app.use(require('../routes/login'))
 
+app.use(require('../routes/post'))
 
+app.use(require('../routes/user'))
 
 
 
@@ -40,5 +45,6 @@ mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useUnifiedTopology:
 app.listen(process.env.PORT, () => {
 
     console.log(`Server listening in port ${process.env.PORT}`);
+    console.log(`localhost:${process.env.PORT}`);
 
 })

@@ -8,12 +8,24 @@ const postSchema = new Schema({
         hora: Date
     },
     usuario: {
-        type: Shema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'user'
     },
     respuestas: {
-        type: Shema.Types.ObjectId,
-        ref: 'answers'
+        texto: {
+            type: String
+        },
+        usuario: {
+            type: Schema.Types.ObjectId,
+            ref: 'user'
+        },
+        likes: {
+            type: String,
+            default: 0
+        },
+        hora: {
+            type: Date
+        }
     },
     likes: {
         type: String,

@@ -17,3 +17,6 @@ if (process.env.NODE_ENV === 'dev') {
 }
 
 process.env.URLDB = urlDB;
+
+
+process.env.SEED = process.env.SEED || 'clave_de_desarrollo';
